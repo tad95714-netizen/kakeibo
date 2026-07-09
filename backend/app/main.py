@@ -10,7 +10,7 @@ from fastapi.staticfiles import StaticFiles
 
 from app.config import APP_NAME, APP_VERSION, BASE_DIR
 from app.database import Base, engine
-from app.routers import categories, transactions
+from app.routers import categories, reports, transactions
 
 
 @asynccontextmanager
@@ -24,6 +24,7 @@ app = FastAPI(title=APP_NAME, version=APP_VERSION, lifespan=lifespan)
 
 app.include_router(categories.router, prefix="/api")
 app.include_router(transactions.router, prefix="/api")
+app.include_router(reports.router, prefix="/api")
 
 # フロントエンドの静的ファイルを配信する(backend/ から見て ../frontend)
 FRONTEND_DIR = BASE_DIR.parent / "frontend"

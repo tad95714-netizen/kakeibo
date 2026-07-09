@@ -58,5 +58,8 @@ const Api = (() => {
     createTransaction: (data) => request("/transactions", { method: "POST", body: JSON.stringify(data) }),
     updateTransaction: (id, data) => request(`/transactions/${id}`, { method: "PUT", body: JSON.stringify(data) }),
     deleteTransaction: (id) => request(`/transactions/${id}`, { method: "DELETE" }),
+
+    // レポート(月次集計)
+    getMonthlyReport: (year, month) => request(`/reports/monthly${toQueryString({ year, month })}`),
   };
 })();

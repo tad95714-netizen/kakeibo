@@ -304,6 +304,73 @@ select {
 }
 
 /* ==========================================================================
+   レポート: カテゴリ別内訳(バー表示)
+   ========================================================================== */
+.report-breakdown__heading {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin: 0 0 12px;
+}
+
+.report-breakdown {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.report-breakdown__item {
+    padding: 10px 4px;
+    border-bottom: 1px solid var(--paper-line);
+}
+
+.report-breakdown__label {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 0.88rem;
+}
+
+.report-breakdown__name {
+    font-weight: 500;
+}
+
+.report-breakdown__amount {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.report-breakdown__item--expense .report-breakdown__amount {
+    color: var(--ink-red);
+}
+
+.report-breakdown__item--income .report-breakdown__amount {
+    color: var(--ink-black);
+}
+
+.report-breakdown__bar-track {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--paper);
+    overflow: hidden;
+}
+
+.report-breakdown__bar {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.report-breakdown__bar--expense {
+    background: var(--ink-red);
+}
+
+.report-breakdown__bar--income {
+    background: var(--ink-black);
+}
+
+/* ==========================================================================
    取引一覧(帳簿の罫線をイメージ)
    ========================================================================== */
 .ledger-list {

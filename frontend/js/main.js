@@ -22,6 +22,9 @@
                 if (targetId === "panel-list") {
                     Transactions.loadList();
                 }
+                if (targetId === "panel-report") {
+                    Reports.load();
+                }
             });
         });
     }
@@ -29,7 +32,7 @@
     async function init() {
         initTabs();
         try {
-            await Promise.all([Categories.load(), Transactions.loadList()]);
+            await Promise.all([Categories.load(), Transactions.loadList(), Reports.load()]);
         } catch (e) {
             Toast.show("初期データの読み込みに失敗しました");
         }
